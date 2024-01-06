@@ -45,8 +45,11 @@ public class KioskService {
     public void orderCheck3() {
         print(screenData.getScreenData(ScreenStage.ORDER_SECTOR_3));
     }
-    public void decideOrder() {
-        print(screenData.getScreenData(ScreenStage.DECIDE_ORDER));
+    public void decideOrder1() {
+        print(screenData.getScreenData(ScreenStage.DECIDE_ORDER1));
+    }
+    public void decideOrder2() {
+        print(screenData.getScreenData(ScreenStage.DECIDE_ORDER2));
     }
 
     public void orderCancel() {

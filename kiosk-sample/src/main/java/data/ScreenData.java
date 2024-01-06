@@ -41,15 +41,15 @@ public class ScreenData {
             "5. Hamburger     | W 5.4 | 비프패티를 기반으로 야채가 들어간 기본버거");
 
         screedDataMap.put(ScreenStage.FROZENCUSTARDMENU, " \"SHAKESHACK BURGER 에 오신걸 환영합니다.\"\n" +
-                "아래 상품메뉴판을 보시고 상품을 골라 입력해주세요.\n" +
-                "\n" +
-                "[ FrozenCustard MENU ]\n" +
-                "1. Shakes            | W 5.9 | 바닐라, 초콜렛, 솔티드 카라멜, 블랙 &화이트, 스트로베리, 피넛버터, 커피\n" +
-                "2. Shake of the Week | W 6.5 | 특별한 커스터드 플레이버\n" +
-                "3. Red Bean Shake    | W 5.9 | 신비한 커스터드와 함께 우유와 레드빈이 블렌딩 된 시즈널 쉐이크\n" +
-                "4. Floats            | W 5.9 | 루트 비어, 퍼플 카우, 크림시클\n" +
-                "5. Cups & Cones      | W 4.9 | 바닐라, 초콜렛, Flavor of the Week\n" +
-                "6. Concretes         | W 5.9 | 쉐이크쉑의 쫀득한 커스터드와 다양한 믹스-인의 조합");
+            "아래 상품메뉴판을 보시고 상품을 골라 입력해주세요.\n" +
+            "\n" +
+            "[ FrozenCustard MENU ]\n" +
+            "1. Shakes            | W 5.9 | 바닐라, 초콜렛, 솔티드 카라멜, 블랙 &화이트, 스트로베리, 피넛버터, 커피\n" +
+            "2. Shake of the Week | W 6.5 | 특별한 커스터드 플레이버\n" +
+            "3. Red Bean Shake    | W 5.9 | 신비한 커스터드와 함께 우유와 레드빈이 블렌딩 된 시즈널 쉐이크\n" +
+            "4. Floats            | W 5.9 | 루트 비어, 퍼플 카우, 크림시클\n" +
+            "5. Cups & Cones      | W 4.9 | 바닐라, 초콜렛, Flavor of the Week\n" +
+            "6. Concretes         | W 5.9 | 쉐이크쉑의 쫀득한 커스터드와 다양한 믹스-인의 조합");
 
         screedDataMap.put(ScreenStage.DRINKSMENU, " \"SHAKESHACK BURGER 에 오신걸 환영합니다.\"\n" +
             "아래 상품메뉴판을 보시고 상품을 골라 입력해주세요.\n" +
@@ -73,20 +73,17 @@ public class ScreenData {
             "위 메뉴를 장바구니에 추가하시겠습니까?\n" +
                 "1. 확인        2. 취소");
 
-
-
         screedDataMap.put(ScreenStage.ORDER_SECTOR_1, "아래와 같이 주문 하시겠습니까?\n" +
             "\n" +
-            "[ Orders ]\n"
+            "[ Orders ]"
         );
-        screedDataMap.put(ScreenStage.ORDER_SECTOR_2, "[ Total ]\n");
+        screedDataMap.put(ScreenStage.ORDER_SECTOR_2, "[ Total ]");
 
-        screedDataMap.put(ScreenStage.ORDER_SECTOR_3, "1. 주문      2. 메뉴판판");
+        screedDataMap.put(ScreenStage.ORDER_SECTOR_3, "\n1. 주문      2. 메뉴판");
 
-        screedDataMap.put(ScreenStage.DECIDE_ORDER, "주문이 완료되었습니다!\n" +
-            "\n" +
-            "대기번호는 [ 1 ] 번 입니다.\n" +
-            "(3초후 메뉴판으로 돌아갑니다.)");
+        screedDataMap.put(ScreenStage.DECIDE_ORDER1, "주문이 완료되었습니다!\n");
+
+        screedDataMap.put(ScreenStage.DECIDE_ORDER2, "(3초후 메뉴판으로 돌아갑니다.)\n");
 
         screedDataMap.put(ScreenStage.REMENU, "\"SHAKESHACK BURGER 에 오신걸 환영합니다.\"\n" +
             "아래 메뉴판을 보시고 메뉴를 골라 입력해주세요.\n" +
@@ -120,12 +117,11 @@ public class ScreenData {
             "6. Cancel      | 진행중인 주문을 취소합니다.");
 
 
-         //SHAKESHACK MENU
+        //SHAKESHACK MENU
         screedDataMap.put(ScreenStage.BURGESR, "Burgers");
         screedDataMap.put(ScreenStage.FROZENCUSTARD, "Frozen Custard");
         screedDataMap.put(ScreenStage.DRINKS, "Drinks");
         screedDataMap.put(ScreenStage.BEER, "Beer");
-
 
 
         screedDataMap.put(ScreenStage.BURGER_1, "1. ShackBurger   | W 6.9 | 토마토, 양상추, 쉑소스가 토핑된 치즈버거\\n");
@@ -150,7 +146,6 @@ public class ScreenData {
         //
         screedDataMap.put(ScreenStage.BEER_1, "1. ShackMeister Ale | W 9.8 | 쉐이크쉑 버거를 위해 뉴욕 브루클린 브루어리에서 특별히 양조한 에일 맥주\\n");
         screedDataMap.put(ScreenStage.BEER_2, "2. Magpie Brewing Co| W 6.8 |\\n");
-
 
 
     }

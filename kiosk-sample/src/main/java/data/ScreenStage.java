@@ -41,7 +41,9 @@ public enum ScreenStage {
     ORDER_SECTOR_1,  // 주문
     ORDER_SECTOR_2,
     ORDER_SECTOR_3,
-    DECIDE_ORDER,  // 주문 완료
+    DECIDE_ORDER1,  // 주문 완료
+    DECIDE_ORDER2,  // 주문 완료
+
     REMENU,
     ORDER_CANCEL,  // 주문 취소
     CANCEL_COMPLETE, // 주문 취소 완료
