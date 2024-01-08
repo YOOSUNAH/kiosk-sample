@@ -16,7 +16,7 @@ import static java.awt.SystemColor.menu;
 public class Main {
     public static void main(String[] args) {
         KioskService kioskService = new KioskService();
-        Cart cart = new Cart(new ArrayList<>());
+        Cart cart = new Cart(new ArrayList<>(), 1);
         Scanner sc = new Scanner(System.in);
 
         // 메인 메뉴판 화면
@@ -76,13 +76,12 @@ public class Main {
                 if (completeOrder.equals("1. 주문")) {
                     kioskService.decideOrder1();
                     // 대기번호 주어야 한다.
-                    int waitingNumber = 0;
-                    waitingNumber += 1;
-                    System.out.println("대기번호는 [ " + waitingNumber + " ] 번 입니다.");
+                    System.out.println("대기번호는 [ " + cart.getOrderNumber() + " ] 번 입니다.");
                     kioskService.decideOrder2();
                     // 주문이 완료되었으니 장바구니 초기화하기
                     cart.cancelOrder();
                     kioskService.mainMenu();
+                    orderProcess(sc, kioskService, cart);
                 } else if (completeOrder.equals("2. 메뉴판")) {  // 장바구니 초기화 하면 안됨.
                     kioskService.mainMenu();
                     orderProcess(sc, kioskService, cart);
@@ -214,6 +213,7 @@ public class Main {
             return;
         } else if (askOrderToCart.equals("2. 취소")) {
             kioskService.mainMenu();
+            orderProcess(sc, kioskService, cart);
         }
     }
 
@@ -248,6 +248,7 @@ public class Main {
         cart.addOrder(selectedOrder);
         kioskService.mainMenu();
         orderProcess(sc, kioskService, cart);
+
     }
 
 }
