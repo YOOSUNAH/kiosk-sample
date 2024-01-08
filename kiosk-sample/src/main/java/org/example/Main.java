@@ -26,7 +26,7 @@ public class Main {
 
     public static void orderProcess(Scanner sc, KioskService kioskService, Cart cart) {
         // 상품 메뉴 선택 시
-        String customerMenu = sc.nextLine();
+        String customerMenu = sc.nextLine().strip();
         String orderBeer;
         String orderDrinks;
         String orderFrozenCustard;
@@ -36,22 +36,22 @@ public class Main {
             case "Burgers":
                 kioskService.burgerMenu();
                 // 상품 메뉴 - 카데고리 메뉴판
-                orderBurger = sc.nextLine();
+                orderBurger = sc.nextLine().strip();
                 selectBurger(kioskService, orderBurger, sc, cart);
                 break;
             case "Frozen Custard":
                 kioskService.frozenCustardMenu();
-                orderFrozenCustard = sc.nextLine();
+                orderFrozenCustard = sc.nextLine().strip();
                 selectFrozenCustard(kioskService, orderFrozenCustard, sc, cart);
                 break;
             case "Drinks":
                 kioskService.drinksMenu();
-                orderDrinks = sc.nextLine();
+                orderDrinks = sc.nextLine().strip();
                 selectDrinks(kioskService, orderDrinks, sc, cart);
                 break;
             case "Beer":
                 kioskService.beerMenu();
-                orderBeer = sc.nextLine();
+                orderBeer = sc.nextLine().strip();
                 selectBeer(kioskService, orderBeer, sc, cart);
                 break;
             case "Order":
@@ -72,7 +72,7 @@ public class Main {
                 double totalPrice = cart.calculateTotalprice();
                 System.out.println(" W " + totalPrice);
                 kioskService.orderCheck3();   // "1.주문, 2.메뉴판"
-                String completeOrder = sc.nextLine();
+                String completeOrder = sc.nextLine().strip();
                 if (completeOrder.equals("1. 주문")) {
                     kioskService.decideOrder1();
                     // 대기번호 주어야 한다.
@@ -89,7 +89,7 @@ public class Main {
                 break;
             case "Cancel":
                 kioskService.orderCancel();   // "진행하던 주문을 취소하시겠습니까?\n" +
-                String cancelprogress = sc.nextLine();
+                String cancelprogress = sc.nextLine().strip();
                 if (cancelprogress.equals("1. 확인")) {
                     kioskService.cancelComplete();
                     cart.cancelOrder();
@@ -151,7 +151,7 @@ public class Main {
             }
         }
         kioskService.buy();  // 위 메뉴를 장바구니에 추가하시겠습니까?
-        String askOrderToCart = sc.nextLine();
+        String askOrderToCart = sc.nextLine().strip();
         if (askOrderToCart.equals("1. 확인") && selectedBurger != null) {
             System.out.println(selectedBurger.name + "가 장바구니에 추가되었습니다.\n");
             // 장바구니에 추가하기
@@ -178,7 +178,7 @@ public class Main {
             }
         }
         kioskService.buy();  // 위 메뉴를 장바구니에 추가하시겠습니까?
-        String askOrderToCart = sc.nextLine();
+        String askOrderToCart = sc.nextLine().strip();
         if (askOrderToCart.equals("1. 확인") && selectedFrozenCustards != null) {
             System.out.println(selectedFrozenCustards.name + "가 장바구니에 추가되었습니다.\n");
             // 장바구니에 추가하기
@@ -204,7 +204,7 @@ public class Main {
             }
         }
         kioskService.buy();  // 위 메뉴를 장바구니에 추가하시겠습니까?
-        String askOrderToCart = sc.nextLine();
+        String askOrderToCart = sc.nextLine().strip();
         if (askOrderToCart.equals("1. 확인") && selectedDrinks != null) {
             System.out.println(selectedDrinks.name + "가 장바구니에 추가되었습니다.\n");
             // 장바구니에 추가하기
@@ -232,7 +232,7 @@ public class Main {
             }
         }
         kioskService.buy();  // 위 메뉴를 장바구니에 추가하시겠습니까?
-        String askOrderToCart = sc.nextLine();
+        String askOrderToCart = sc.nextLine().strip();
         if (askOrderToCart.equals("1. 확인") && selectedBeer != null) {
             System.out.println(selectedBeer.name + "가 장바구니에 추가되었습니다.\n");
             // 장바구니에 추가하기
