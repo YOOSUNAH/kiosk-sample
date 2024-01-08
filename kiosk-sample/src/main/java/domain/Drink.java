@@ -10,6 +10,4 @@ public class Drink extends Menu {
         this.description = description;
         this.price = price;
     }
-
-
 }

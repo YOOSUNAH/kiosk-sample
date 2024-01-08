@@ -11,8 +11,6 @@ import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.List;
 
-import static java.awt.SystemColor.menu;
-
 public class Main {
     public static void main(String[] args) {
         KioskService kioskService = new KioskService();
@@ -75,11 +73,9 @@ public class Main {
                 String completeOrder = sc.nextLine().strip();
                 if (completeOrder.equals("1. 주문")) {
                     kioskService.decideOrder1();
-                    // 대기번호 주어야 한다.
                     System.out.println("대기번호는 [ " + cart.getOrderNumber() + " ] 번 입니다.");
                     kioskService.decideOrder2();
-                    // 주문이 완료되었으니 장바구니 초기화하기
-                    cart.cancelOrder();
+                    cart.cancelOrder(); // 주문 완료 후 장바구니 초기화 해야함.
                     kioskService.mainMenu();
                     orderProcess(sc, kioskService, cart);
                 } else if (completeOrder.equals("2. 메뉴판")) {  // 장바구니 초기화 하면 안됨.
@@ -96,7 +92,7 @@ public class Main {
                     kioskService.mainMenu();
                 } else if (cancelprogress.equals("2. 취소")) {
                     kioskService.mainMenu();
-                    orderProcess(sc, kioskService, cart);  // 취소하고 다시 선택할 수 있었으면 좋겠는데 안됨.
+                    orderProcess(sc, kioskService, cart);
                 }
                 break;
             default:
@@ -105,18 +101,16 @@ public class Main {
                 orderProcess(sc, kioskService, cart);
                 break;
         }
-
     }
 
-
-    //메서드
     data.Burgers[] burgers = Burgers.values();
     data.FrozenCustards[] frozenCustards = FrozenCustards.values();
     data.Drinks[] drinks = data.Drinks.values();
     data.Beers[] beers = Beers.values();
 
     private static void selectBurger(KioskService kioskService, String orderBurger, Scanner sc, Cart cart) {
-        // 방법 1
+//     개인 학습용 주석 (방법 1보다 더 효율적임 _ if문대신 향상된 for문 사용)
+        //    방법 1
 //        if (orderBurger.equals(Burgers.BURGER_1.getName())) {
 //            System.out.println(
 //                String.format("%s. %s | W %.1f | %s \n",
@@ -135,8 +129,7 @@ public class Main {
 //                    Burgers.BURGER_2.description)
 //            );
 //        }
-
-        // 방법 2
+//     방법 2
         Burgers selectedBurger = null;
 
         for (Burgers burger : Burgers.values()) {
@@ -154,7 +147,6 @@ public class Main {
         String askOrderToCart = sc.nextLine().strip();
         if (askOrderToCart.equals("1. 확인") && selectedBurger != null) {
             System.out.println(selectedBurger.name + "가 장바구니에 추가되었습니다.\n");
-            // 장바구니에 추가하기
             Order orderInfo = new Order(selectedBurger.name, selectedBurger.price, selectedBurger.description, 1);
             addToCart(orderInfo, cart, sc, kioskService);
             return;  // 출력문이 안나오고 입력가능한 화면이 나왔다가 return 으로 메서드 종료 시켜 출력문이 나오게 되었다.
@@ -177,11 +169,10 @@ public class Main {
                 selectedFrozenCustards = frozenCustards;
             }
         }
-        kioskService.buy();  // 위 메뉴를 장바구니에 추가하시겠습니까?
+        kioskService.buy();
         String askOrderToCart = sc.nextLine().strip();
         if (askOrderToCart.equals("1. 확인") && selectedFrozenCustards != null) {
             System.out.println(selectedFrozenCustards.name + "가 장바구니에 추가되었습니다.\n");
-            // 장바구니에 추가하기
             Order orderInfo = new Order(selectedFrozenCustards.name, selectedFrozenCustards.price, selectedFrozenCustards.description, 1);
             addToCart(orderInfo, cart, sc, kioskService);
             return;
@@ -189,6 +180,7 @@ public class Main {
             kioskService.mainMenu();
         }
     }
+
     private static void selectDrinks(KioskService kioskService, String orderDrinks, Scanner sc, Cart cart) {
         Drinks selectedDrinks = null;
         for (Drinks drink : Drinks.values()) {
@@ -203,11 +195,10 @@ public class Main {
                 selectedDrinks = drink;
             }
         }
-        kioskService.buy();  // 위 메뉴를 장바구니에 추가하시겠습니까?
+        kioskService.buy();
         String askOrderToCart = sc.nextLine().strip();
         if (askOrderToCart.equals("1. 확인") && selectedDrinks != null) {
             System.out.println(selectedDrinks.name + "가 장바구니에 추가되었습니다.\n");
-            // 장바구니에 추가하기
             Order orderInfo = new Order(selectedDrinks.name, selectedDrinks.price, selectedDrinks.description, 1);
             addToCart(orderInfo, cart, sc, kioskService);
             return;
@@ -231,11 +222,10 @@ public class Main {
                 selectedBeer = beer;
             }
         }
-        kioskService.buy();  // 위 메뉴를 장바구니에 추가하시겠습니까?
+        kioskService.buy();
         String askOrderToCart = sc.nextLine().strip();
         if (askOrderToCart.equals("1. 확인") && selectedBeer != null) {
             System.out.println(selectedBeer.name + "가 장바구니에 추가되었습니다.\n");
-            // 장바구니에 추가하기
             Order orderInfo = new Order(selectedBeer.name, selectedBeer.price, selectedBeer.description, 1);
             addToCart(orderInfo, cart, sc, kioskService);
             return;
@@ -244,13 +234,12 @@ public class Main {
         }
 
     }
+
     private static void addToCart(Order selectedOrder, Cart cart, Scanner sc, KioskService kioskService) {
         cart.addOrder(selectedOrder);
         kioskService.mainMenu();
         orderProcess(sc, kioskService, cart);
-
     }
-
 }
 
 

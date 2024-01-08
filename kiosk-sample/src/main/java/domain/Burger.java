@@ -10,8 +10,4 @@ public class Burger extends Menu {
         this.description = description;
         this.price = price;
     }
-
-
-
-
 }

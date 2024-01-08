@@ -1,6 +1,6 @@
 package domain;
 
-public class FrozenCustard extends Menu{
+public class FrozenCustard extends Menu {
     private String name;
     private String description;
     private int price;
@@ -10,6 +10,4 @@ public class FrozenCustard extends Menu{
         this.description = description;
         this.price = price;
     }
-
-
 }

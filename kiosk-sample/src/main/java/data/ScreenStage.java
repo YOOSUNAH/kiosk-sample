@@ -1,15 +1,13 @@
 package data;
 
 public enum ScreenStage {
-
-     MAIN_MENU,  // 메인 메뉴판
+    MAIN_MENU,  // 메인 메뉴판
     BURGESR,
     BEER,
     DRINKS,
     BURGERMENU,
     DRINKSMENU,
     BEERMENU,
-
     FROZENCUSTARDMENU,
     FROZENCUSTARD,
     //
@@ -37,13 +35,11 @@ public enum ScreenStage {
     FROZENCUSTARD_6,
     //
     BUY, // 구매
-
     ORDER_SECTOR_1,  // 주문
     ORDER_SECTOR_2,
     ORDER_SECTOR_3,
     DECIDE_ORDER1,  // 주문 완료
     DECIDE_ORDER2,  // 주문 완료
-
     REMENU,
     ORDER_CANCEL,  // 주문 취소
     CANCEL_COMPLETE, // 주문 취소 완료

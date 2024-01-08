@@ -8,9 +8,6 @@ public class Order {
     private double price;
     private int quantity;
 
-
-
-
     public Order(String name, double price, String description, int quantity) {
         this.name = name;
         this.price = price;
@@ -18,22 +15,23 @@ public class Order {
         this.quantity = quantity;
     }
 
-
     public String getName() {
         return name;
     }
+
     public String getDescription() {
         return description;
     }
+
     public double getPrice() {
         return price;
     }
+
     public int getQuantity() {
         return quantity;
     }
 
-    public double calculatePrice(){
+    public double calculatePrice() {
         return (getPrice() * quantity);
     }
-
 }

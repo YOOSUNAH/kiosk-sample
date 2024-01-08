@@ -5,16 +5,16 @@ public class Menu {
     private String description;
     private int price;
 
-    public String getName(){
+    public String getName() {
         return this.name;
     }
 
-    public String getDescription(){
+    public String getDescription() {
         return this.description;
     }
-    public int getPrice(){
+
+    public int getPrice() {
         return this.price;
     }
-
 
 }
